@@ -1,0 +1,400 @@
+/*GLOBAL STYLE*/
+*
+{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+:root
+{
+    --red-color : rgb(242, 84, 84);
+    --gray-color : #444;
+    --lightgray-color:#fafafa;
+    --brown-color :#222;
+}
+.bottom-95
+{
+    bottom: 95%;
+}
+.bg-white-gradient
+{
+    background-color:rgba(255, 255, 255,.5);
+}
+.bg-brown
+{
+   background-color: var(--brown-color);
+}
+.bg-red
+{
+    background-color: var(--red-color);
+}
+.text-red
+{
+    color: var(--red-color);
+}
+.bg-lightgray
+{
+    background-color: var(--lightgray-color);
+}
+.letter-space
+{
+  letter-spacing: .125rem;
+}
+.word-space
+{
+    word-spacing: .16rem;
+}
+.zindex-1
+{
+    z-index: 1;
+   
+}
+.top-25
+{
+    top: 25%;
+}
+.top-80
+{
+    top:80%;
+}
+.p-6
+{
+  padding: 6rem 0;
+}
+.w-15
+{
+
+    width: 15%;
+}
+.w-80
+{
+    width: 80%;
+}
+.w-95
+{
+    width: 95%;
+}
+.w-85
+{
+    width: 85%;
+}
+.w-70
+{
+    width: 70%;
+}
+.text-gray
+{
+   color: var(--gray-color);
+}
+/*HEADER STYLE*/
+.nav-items a , .social-icons a i
+{
+ transition: color 1s;
+}
+.nav-items li:hover a , .social-icons a:hover i
+{
+   color: var(--red-color) !important;
+}
+.zindex-large
+{
+    z-index: 6666666;
+}
+
+
+/*HOME STYLE*/
+
+.fixed-tirce
+{
+    background-color: rgb(31, 37, 40);
+    
+}
+.fixed-tirce:hover
+{
+    background-color: rgba(31, 37, 40, 0.3);
+    cursor: pointer;
+}
+.custom-carousel-prev ,.custom-carousel-next
+{
+    background-color: transparent;
+   
+ 
+}
+.layer-prev ,.layer-next
+{
+   background-color: white;
+    right: 100%;
+    transition: right 1s;
+    z-index: 0;
+  
+}
+.icon-color
+{
+    z-index: 1;
+    position: relative;
+    transition: color 1s;
+}
+
+.custom-carousel-prev:hover .layer-prev  , .custom-carousel-prev:hover .icon-color,
+.custom-carousel-next:hover .layer-next  , .custom-carousel-next:hover .icon-color
+{
+    right:0;
+    color: var(--red-color) !important;
+}
+
+.moving-point
+{
+    width: 30px;
+    height: 50px;
+    border: solid 1px white;
+    bottom: 1rem;
+    border-bottom-left-radius: 40%;
+    border-bottom-right-radius: 40%;
+    border-top-left-radius: 40%;
+    border-top-right-radius: 40%;
+    position: relative;
+    transition: border-color 0.5s;
+}
+.moving-point::after
+{
+    content: " ";
+    position: absolute;
+    top:2px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: white;
+    animation: moving 2s infinite;
+}
+.moving-point:hover{
+    border-color: var(--red-color);
+}
+@keyframes moving
+{
+ 0% {top: 5%} 
+ 100% {top: 70%;
+    opacity:0;
+}
+
+
+}
+
+.home-text
+{
+    opacity: 0;
+    animation: moving-text 3s 2s normal infinite , hidden-text 5s  infinite;
+   
+   
+}
+@keyframes moving-text
+{
+    0%
+    {
+        opacity: 1;
+        left:100%;
+
+    }
+   
+    100%
+    {
+        left:0;
+      opacity: 1;
+      
+    }
+   
+}
+@keyframes hidden-text {
+    80%{opacity: 1;}
+   100%{ opacity: 0};
+    
+}
+
+/*ABOUT STYLE*/
+.about-text ,.team-text ,.service-text,.client-text,.contact-text
+{
+
+position: relative;
+z-index: 1;
+
+}
+.about-text::before , .team-text::before ,.service-text::before ,.client-text::before,
+.contact-text::before
+{
+    content: "A";
+    font-size: 4rem;
+    color: rgba(0, 0, 0, .1);
+  
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: auto;
+    top: 0;
+    z-index: -1;
+}
+.about-text::after , .team-text::after ,.service-text::after ,.client-text::after,
+.contact-text::after
+{
+content: "";
+color: black;
+width: 4rem;
+right: 50%;
+transform: translateX(50%);
+border: black solid 1px;;
+position: absolute;
+bottom: 0;
+}
+.about-text:hover::after , .team-text:hover::after ,.service-text:hover::after ,
+.client-text:hover::after, .contact-text:hover::after
+{
+    width: 7rem;
+}
+.progress-hight
+{
+    height: 6px;
+}
+.bar-color
+{
+    background-color: var(--red-color);
+}
+.progress-text
+{
+    color: var(--gray-color);
+}
+/*TEAM STYLE*/
+.team-text::before
+{
+ content: "O";
+}
+.icons-container
+{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(242, 84, 84, 0.9);
+    opacity: 0;
+    transition: opacity 1s ;
+}
+.member-card img{
+    transition: transform 1s;
+}
+
+.member-card:hover h5{
+color: var(--red-color);
+}
+.member-card:hover img{
+    transform: scale(1.2);
+}
+.member-card:hover .icons-container
+{
+   opacity: 1;
+}
+.btn-contact:hover
+{
+    background-color:rgba(242, 84, 84, 0.7);
+}
+/* SERVICE STYLE*/
+.service-text::before
+{
+    content: "S";
+}
+.service-item
+{
+    display: flex;
+
+}
+.service-item h4
+{
+    transition: color 1s;
+}
+.service-item:hover h4{
+    color: var(--red-color);
+}
+/*CLIENT STYLE*/
+.client-text::before
+{
+    content: "C";
+}
+
+.w-20
+{
+    width: 20%;
+}
+.carousel-flex
+{
+    display:flex !important;
+    flex-wrap: nowrap !important;
+}
+.custom-carousel-item
+{
+    
+    margin-right: 0 !important;
+    
+}
+/*CONTACT STYLE*/
+.contact-text::before
+{
+    content: "G";
+}
+.contact-content h3
+{
+    transition: color 1s;
+}
+.contact-content .f-content:hover h3 ,.contact-content .s-content:hover  h3 ,.contact-content .th-content:hover  h3
+{
+    color: var(--red-color);
+} 
+.form-content input ,.form-content textarea
+{
+    height: 4rem;
+}
+.form-content textarea
+{
+    height: 8rem
+}
+.form-content button:hover{
+ background-color: rgba(242, 84, 84, 0.7);
+}
+
+/*FOOTER STYLE*/
+.bg-img
+{
+    background-color: #222;
+    background-image: url(../images/images/dotted-map.png);
+    background-size: cover;
+    background-position: center center;
+}
+.item-1 a , .item-2 a ,.item-3 a  {
+    transition: color 1s ;
+}
+
+.item-1 a:hover , .item-2 a:hover ,.item-3 a:hover,.item-4 a:hover
+{
+   color: var(--red-color) !important;
+}
+.item-4 a{
+    border: 1px white solid;
+    transition: border 1s , color 1s;
+
+}
+.item-4 a:hover
+{
+    border: var(--red-color) 1px solid ;
+    color: var(--red-color);
+  
+}
+.copy-right-sec i ,.copy-right-sec a
+{
+    transition: color 1s;
+}
+.copy-right-sec i:hover ,.copy-right-sec a:hover
+{
+    color: var(--red-color) !important;
+}
+.bg-half-red
+{
+    background-color: rgba(242, 84, 84, 0.5);
+}
+.bg-half-red:hover
+{
+    background-color: var(--red-color);
+}
